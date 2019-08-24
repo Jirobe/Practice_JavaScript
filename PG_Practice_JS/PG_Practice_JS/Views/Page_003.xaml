@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PastQuestionPapers_JavaScript.Views.Page_003"
+             BackgroundColor="#A3629C"
+             NavigationPage.HasNavigationBar="True"
+             NavigationPage.HasBackButton="True"
+             >
+    <ContentPage.Content>
+        <StackLayout>
+            <ScrollView x:Name="Scroll">
+                <Grid>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+
+                    <Label 
+                            Grid.Row="1"
+                            Text="{Binding Question}"
+                            TextColor="White"
+                        />
+
+                    <Label 
+                            Grid.Row="2"
+                            Text="{Binding Text}"
+                        TextColor="White"
+                        />
+
+                    <Button 
+                            Grid.Row="3"
+                            Text="{Binding Execute}"
+                             Command="{Binding ExecuteCommand}"
+                            BackgroundColor="#FAC9C5"
+                            TextColor="White"
+                            Margin="20,0"
+                            IsVisible="{Binding IsVisibleButton}"
+                        />
+                    <ScrollView Grid.Row="4" Orientation="Horizontal" HorizontalScrollBarVisibility="Always" BackgroundColor="#7F5EA3">
+                        <StackLayout Orientation="Horizontal">
+                            <Button Command="{Binding EqualCommand}" Text="「=」" BackgroundColor="#9DD3F9" Margin="0,2"/>
+                            <Button Command="{Binding SingleQuotationCommand}" Text="「'」" BackgroundColor="#9DD3F9" Margin="0,2"/>
+                            <Button Command="{Binding ParenthesisStartCommand}" Text="「(」" BackgroundColor="#9DD3F9" Margin="0,2"/>
+                            <Button Command="{Binding ParenthesisEndCommand}" Text="「)」" BackgroundColor="#9DD3F9" Margin="0,2"/>
+                            <Button Command="{Binding SemicolonCommand}" Text="「;」" BackgroundColor="#9DD3F9" Margin="0,2"/>
+                        </StackLayout>
+                    </ScrollView>
+                    <Editor 
+                            Grid.Row="5"
+                            Text="{Binding Answer}"
+                             HeightRequest="500"
+                            BackgroundColor="#F0EDDE"
+                        />
+                    <Button 
+                            Grid.Row="6"
+                            Text="{Binding AnswerButton}"
+                             Command="{Binding AnswerButtonCommand}"
+                            BackgroundColor="#FAC9C5"
+                            TextColor="White"
+                            Margin="20,0"
+                            IsVisible="{Binding IsVisibleButton}"
+                        />
+
+                    <Frame Grid.RowSpan="7" IsVisible="{Binding IsVisibleResult}">
+                        <StackLayout>
+                            <Button Command="{Binding CloseCommand}" Text="Close" BackgroundColor="#FAC9C5" TextColor="White" Margin="20,0"/>
+                            <WebView 
+                                Source="{Binding Result}"
+                                HeightRequest="500"
+                                BackgroundColor="#F0EDDE"
+                            />
+                        </StackLayout>
+                    </Frame>
+                </Grid>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

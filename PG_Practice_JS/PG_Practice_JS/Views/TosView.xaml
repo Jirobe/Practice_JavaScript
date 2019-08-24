@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PG_Practice_JS.Views.TosView"
+             NavigationPage.HasBackButton="False"
+             NavigationPage.HasNavigationBar="True"
+             >
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="
+&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;
+１　サービス提供者は、いかなる場合も、間接損害、派生損害、逸失利益、特別の事情から生じた損害（損害発生につきサービス利用者の予見の有無を問わない）、データの消失、及びその他の責任は一切負いません。
+&#xD;&#xA;&#xD;&#xA;
+２　国内外の諸法令に違反するおそれのある行為に利用する事を禁止いたします。
+&#xD;&#xA;&#xD;&#xA;
+３  上記の内容についてアプリケーションの利用開始の時点で同意されたものとして扱います。
+&#xD;&#xA;&#xD;&#xA;
+                   "
+                VerticalOptions="StartAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Button Clicked="Button_Clicked" Text="上記規約に同意する"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
